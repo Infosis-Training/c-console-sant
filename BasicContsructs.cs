@@ -1,14 +1,10 @@
+using System;
+using Collect;
+
+namespace Basic;  //Creating new namespace
+
 class BasicContsructs
 {
-
-    public static void Main(){
-
-        // LearnConditionals(40,50);
-        // LearnSwitch();
-        LearnLoops();
-    
-    }
-
     static void LearnConditionals(byte x, byte y)
     {
 
@@ -44,19 +40,25 @@ class BasicContsructs
         }
     }
 
-    static void LearnLoops()
+    internal void LearnLoops()
     {
-        for(byte i = 1; i < 10; i++){
+        // for(byte i = 1; i < 10; i++){
 
-            // Console.WriteLine($"{i} .Net Training");   
-        }
+        //     // Console.WriteLine($"{i} .Net Training");   
+        // }
 
+        // byte j = 1;
+        // while(j < 4)
+        // {
+        //     // Console.WriteLine($"{j} .Net Training");
+        //     // j++;
+        // }
 
-        byte j = 1;
-        while(j < 4)
-        {
-            Console.WriteLine($"{j} .Net Training");
-            j++;
+        string[] names = {"Abc", "def", "ghi","jkl"};
+
+        foreach(string test in names){
+            
+            Console.WriteLine(test);
         }
     }
 }

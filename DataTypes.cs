@@ -1,3 +1,6 @@
+/*
+using System;
+
 class DataTypes
 {
     // See https://aka.ms/new-console-template for more information
@@ -23,4 +26,5 @@ class DataTypes
     int? k = 1; //Nullabe type, if value may be null in case
 
 
-}
+} 
+*/

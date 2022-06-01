@@ -1,0 +1,21 @@
+##Assignements 01 Jun 2022
+1. Print Following pattern on console:
+#
+##
+###
+####
+
+
+1
+12
+123
+1234
+12345
+123456
+
+
+  
+    #
+   ###
+  #####
+ #######
