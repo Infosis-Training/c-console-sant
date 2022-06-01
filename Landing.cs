@@ -1,7 +1,12 @@
-﻿using System.Runtime.CompilerServices;
+﻿using Oop;
+//Oop namespace has been defined in ClassAndMembers.cs and Inheritance.cs
+//same Namespace can be used if we want to group two classes in single one so we can use at once in other classes
+
 class Landing
 {
-    public static void Main()
+
+    //Void Main is entry point for c#, application use this to run for first time. And this can be only used once in whole project.
+    public static void Main2()
     {
         //Creating Objects/Instance
         //Accessing Instance members
@@ -17,7 +22,11 @@ class Landing
 
         string details = user.GetFullDetails();
 
-        Console.WriteLine(details);
+        // Console.WriteLine(details);
+
+        BasicContsructs test = new();
+
+        // Console.WriteLine
     }
 
 }

@@ -1,5 +1,4 @@
-//Object oriented programing concept
-
+namespace Oop;
 
 //1. Classes and Objects
 
@@ -15,7 +14,8 @@ class Person
     internal string gender; //internal is accessed within this project only
 
     //Member : as a method
-    public void GetPersonDetails(){
+    public void GetPersonDetails()
+    {
         Console.WriteLine($"\nName: {name}.");
         Console.WriteLine($"Height: {heightInFt} feet.");
         Console.WriteLine($"Weight: {weightInKg} Kg.");
@@ -24,7 +24,8 @@ class Person
         Console.WriteLine($"Learning in Institute: {institute}.\n.");
     }
 
-    public string GetFullDetails(){
+    public string GetFullDetails()
+    {
         string details = $"\n My name is {name}. \n my height is {heightInFt}. \n my weight is {weightInKg}. \n Learning in Institute: {institute}.\n.";
         return details;
     }
