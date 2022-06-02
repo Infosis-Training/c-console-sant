@@ -1,6 +1,7 @@
-﻿using Oop;
+﻿using System;
+using Oop;
 using Basic;
-using Pattern;
+using Assignment;
 //Oop namespace has been defined in ClassAndMembers.cs and Inheritance.cs
 //same Namespace can be used if we want to group two classes in single one so we can use at once in other classes
 
@@ -12,14 +13,14 @@ class Landing
     {
         //Creating Objects/Instance
         //Accessing Instance members
-        Person user = new();
+        // Person user = new();
         
-        user.name = "Sant";
-        user.heightInFt = 5.5f;
-        user.weightInKg = 50;
-        user.age = 16;
-        user.gender = "Male";
-        Person.institute = "Braodway Infosis"; //Institue is static feild in Person Class
+        // user.name = "Sant";
+        // user.heightInFt = 5.5f;
+        // user.weightInKg = 50;
+        // user.age = 16;
+        // user.gender = "Male";
+        // Person.institute = "Braodway Infosis"; //Institue is static feild in Person Class
 
         // string details = user.GetFullDetails();
         // Console.WriteLine(details);
@@ -35,8 +36,23 @@ class Landing
         // LearnLoops();
         // basic.LearnLoops();
 
-        Patterns pattern = new();
-        pattern.hash();
+        // Methods m = new();
+        // m.Print();
+        // m.Print("Sant");
+        //assign to vairable if method return any values instead of consolewrite
+        // Console.WriteLine(m.Print("Sant",20));
+        // Console.WriteLine(m.Greet("Gita","Mrs"));
+        // Console.WriteLine(m.GreetTwo("Harry","Dr"));
+        // m.OddEven(4);
+        // m.IsEven(7);
+        
+        Assignments homework = new();
+        // homework.Patterns();
+
+        Console.WriteLine(homework.MaxNumber(95,2,53));
+        Console.WriteLine(homework.Floatings(1,5,7));
+        Console.WriteLine(homework.Initials("Sant","Bohara"));
+        Console.WriteLine(homework.InitialsTwo("Sant","Bohara"));
     }
 
 }

@@ -1,10 +1,11 @@
 using System;
+using System.Linq;
 
-namespace Pattern;
-class Patterns
-{
-
-    internal void hash()
+namespace Assignment;
+class Assignments{
+    
+    //Start Assignment 1  : Loop (2022.06.01) ---------------->
+    internal void Patterns()
     {
 
         int i;
@@ -69,5 +70,32 @@ class Patterns
         }
 
         Console.WriteLine();
+
+        
+        Console.WriteLine("\nPattern 5 Start --------------------------->");
+
+        //using 2d array
+        string[,] box = new string[5,5];
+
     }
+    
+    //End Assignment 2 -------------------->
+    
+    //Assignment 2 : Method (2022.06.02) ---------------->
+    public int MaxNumber(int one, int two, int three){
+        
+        int[] num = {one, two, three};
+
+        return num.Max(); 
+    }
+
+    public string Floatings(float arg, float arg2) => $"{arg}, {arg2}";
+    
+    public string Floatings(float arg, float arg2, float arg3) => $"{arg}, {arg2}, {arg3}";
+
+    public string Initials(string firstName, string secondName) => $"{firstName[0]}{secondName[0]}";
+    
+    public string InitialsTwo(string firstName, string secondName) => $"{firstName.Substring(0,1)}{secondName.Substring(0,1)}";
+
+    //End Assignment 2 -------------------->
 }

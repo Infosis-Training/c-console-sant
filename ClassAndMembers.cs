@@ -6,12 +6,12 @@ namespace Oop;
 class Person
 {
     //Member: as a Feilds
-    public static string institute; //Static feild which is common to all object within this class.
-    public byte age;
-    public string name;
-    public float heightInFt;
-    public byte weightInKg;
-    internal string gender; //internal is accessed within this project only
+    public static string institute = ""; //Static feild which is common to all object within this class.
+    public byte age = 0;
+    public string name = "";
+    public float heightInFt = 1;
+    public byte weightInKg = 1;
+    internal string gender = ""; //internal is accessed within this project only
 
     //Member : as a method
     public void GetPersonDetails()
