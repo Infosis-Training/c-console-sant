@@ -89,12 +89,19 @@ class Assignments{
         return num.Max(); 
     }
 
-    public string Floatings(float arg, float arg2) => $"{arg}, {arg2}";
+    public string Floatings(float arg, float arg2) => $"{arg*arg2}";
     
-    public string Floatings(float arg, float arg2, float arg3) => $"{arg}, {arg2}, {arg3}";
+    public string Floatings(float arg, float arg2, float arg3) => $"{arg*arg2*arg3}";
 
     public string Initials(string firstName, string secondName) => $"{firstName[0]}{secondName[0]}";
     
-    public string InitialsTwo(string firstName, string secondName) => $"{firstName.Substring(0,1)}{secondName.Substring(0,1)}";
+    public void InitialsSplit(string name) {
+        
+        string[] splits = name.Split();
+
+        foreach(string split in splits){
+            Console.Write(split[0]);
+        }
+    }
 
 }

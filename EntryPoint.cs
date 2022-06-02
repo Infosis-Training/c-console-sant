@@ -50,9 +50,9 @@ class Landing
         // homework.Patterns();
 
         Console.WriteLine(homework.MaxNumber(95,2,53));
-        Console.WriteLine(homework.Floatings(1,5,7));
+        Console.WriteLine(homework.Floatings(2,5));
         Console.WriteLine(homework.Initials("Sant","Bohara"));
-        Console.WriteLine(homework.InitialsTwo("Sant","Bohara"));
+        homework.InitialsSplit("Sant Bohara");
     }
 
 }
