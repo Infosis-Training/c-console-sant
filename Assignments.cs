@@ -4,7 +4,7 @@ using System.Linq;
 namespace Assignment;
 class Assignments{
     
-    //Start Assignment 1  : Loop (2022.06.01) ---------------->
+    //Start Assignment 1  : Loop (2022.06.01) ----------------->
     internal void Patterns()
     {
 
@@ -79,9 +79,9 @@ class Assignments{
 
     }
     
-    //End Assignment 1 -------------------->
-    
-    //Assignment 2 : Method (2022.06.02) ---------------->
+    /*#########################################################*/
+
+    //Start Assignment 2 : Method (2022.06.02) ---------------->
     public int MaxNumber(int one, int two, int three){
         
         int[] num = {one, two, three};
@@ -97,5 +97,4 @@ class Assignments{
     
     public string InitialsTwo(string firstName, string secondName) => $"{firstName.Substring(0,1)}{secondName.Substring(0,1)}";
 
-    //End Assignment 2 -------------------->
 }
