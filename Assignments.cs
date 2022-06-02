@@ -79,7 +79,7 @@ class Assignments{
 
     }
     
-    //End Assignment 2 -------------------->
+    //End Assignment 1 -------------------->
     
     //Assignment 2 : Method (2022.06.02) ---------------->
     public int MaxNumber(int one, int two, int three){
