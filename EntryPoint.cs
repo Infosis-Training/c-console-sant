@@ -35,8 +35,8 @@ class Landing
         // LearnLoops();
         // basic.LearnLoops();
 
-        Patterns first = new();
-        first.hash();
+        Patterns pattern = new();
+        pattern.hash();
     }
 
 }

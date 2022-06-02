@@ -52,10 +52,10 @@ class Patterns
 
         Console.WriteLine("\nPattern 4 Start --------------------------->");
 
-        for (i = 0; i < 11; i+=2)
+        for (i = 0; i < 10; i+=2)
         {
 
-            for (j = i; j < 11; j++)
+            for (j = i; j < 10; j++)
             {
                 Console.Write(" ");
             }
