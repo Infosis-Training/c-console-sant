@@ -52,7 +52,7 @@ class Landing
 
         DayTwo Dt = new();
         Console.WriteLine(Dt.MaxNumber(95,2,53));
-        Console.WriteLine(Dt.Floatings(5,10));
+        Console.WriteLine(Dt.Multiply(5,10));
         Console.WriteLine(Dt.Initials("Sant","Bohara"));
         Dt.InitialsSplit("Sant Bohara");
     }
