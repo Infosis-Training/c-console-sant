@@ -14,7 +14,7 @@ namespace DayTwoAssignments
             return num.Max();
         }
 
-        public string Multiply(float arg, float arg2, float arg3 = 1) => $"{arg * arg2 * arg3}";
+        public double Multiply(double arg, double arg2, double arg3 = 1) => arg * arg2 * arg3;
 
         public string Initials(string firstName, string secondName) => $"{firstName[0]}{secondName[0]}";
 
