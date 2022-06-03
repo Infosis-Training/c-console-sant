@@ -1,7 +1,8 @@
 ﻿using System;
 using Oop;
 using Basic;
-using Assignment;
+using DayOneAssignments;
+using DayTwoAssignments;
 //Oop namespace has been defined in ClassAndMembers.cs and Inheritance.cs
 //same Namespace can be used if we want to group two classes in single one so we can use at once in other classes
 
@@ -46,13 +47,14 @@ class Landing
         // m.OddEven(4);
         // m.IsEven(7);
         
-        Assignments homework = new();
-        // homework.Patterns();
+        DayOne Do = new();
+        Do.Patterns();
 
-        Console.WriteLine(homework.MaxNumber(95,2,53));
-        Console.WriteLine(homework.Floatings(2,5));
-        Console.WriteLine(homework.Initials("Sant","Bohara"));
-        homework.InitialsSplit("Sant Bohara");
+        DayTwo Dt = new();
+        Console.WriteLine(Dt.MaxNumber(95,2,53));
+        Console.WriteLine(Dt.Floatings(5,10));
+        Console.WriteLine(Dt.Initials("Sant","Bohara"));
+        Dt.InitialsSplit("Sant Bohara");
     }
 
 }

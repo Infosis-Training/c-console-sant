@@ -1,10 +1,10 @@
 using System;
 using System.Linq;
 
-namespace Assignment;
-class Assignments{
+namespace DayOneAssignments;
+class DayOne{
     
-    //Start Assignment 1  : Loop (2022.06.01) ----------------->
+    //Loop 2022.06.01 ----------------->
     internal void Patterns()
     {
 
@@ -77,31 +77,5 @@ class Assignments{
         //using 2d array
         string[,] box = new string[5,5];
 
-    }
-    
-    /*#########################################################*/
-
-    //Start Assignment 2 : Method (2022.06.02) ---------------->
-    public int MaxNumber(int one, int two, int three){
-        
-        int[] num = {one, two, three};
-
-        return num.Max(); 
-    }
-
-    public string Floatings(float arg, float arg2) => $"{arg*arg2}";
-    
-    public string Floatings(float arg, float arg2, float arg3) => $"{arg*arg2*arg3}";
-
-    public string Initials(string firstName, string secondName) => $"{firstName[0]}{secondName[0]}";
-    
-    public void InitialsSplit(string name) {
-        
-        string[] splits = name.Split();
-
-        foreach(string split in splits){
-            Console.Write(split[0]);
-        }
-    }
-
+    }    
 }
