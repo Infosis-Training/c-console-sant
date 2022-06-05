@@ -3,15 +3,19 @@ namespace Oop;
 
 //1. Classes and Objects
 
+
+//Note: 'abstract' class can be inheritance but cant be defined as method in another classes.
+
 class Person
 {
     //Member: as a Feilds
-    public static string institute = ""; //Static feild which is common to all object within this class.
+    public static string institute = null; //Static feild which is common to all object within this class.
     public byte age = 0;
-    public string name = "";
-    public float heightInFt = 1;
-    public byte weightInKg = 1;
-    internal string gender = ""; //internal is accessed within this project only
+    public string name = null;
+    public float heightInFt = 0;
+    public byte weightInKg = 0;
+    internal string gender = null; //internal is accessed within this project only
+    protected string salary = null; //Inheritance class cant access this but this can be used within this own calls 
 
     //Member : as a method
     public void GetPersonDetails()

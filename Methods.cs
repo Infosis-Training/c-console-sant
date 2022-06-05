@@ -53,4 +53,14 @@ class Methods
 
     public bool IsEven(int num) => num % 2 == 0;
 
+    //Returing multiple values as array, this is called tuple
+    public (int, int) FindMinMax(int x, int y, int z){
+        
+        DayTwo mx = new();
+        int max = mx.MaxNumber(x,y,z);
+        int min = mx.MinNumber(x,y,z);
+
+        return (min,max);
+    }
+
 }

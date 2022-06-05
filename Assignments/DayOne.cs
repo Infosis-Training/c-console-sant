@@ -1,7 +1,7 @@
 using System;
 using System.Linq;
 
-namespace DayOneAssignments;
+// namespace DayOneAssignments;
 class DayOne{
     
     //Loop 2022.06.01 ----------------->
