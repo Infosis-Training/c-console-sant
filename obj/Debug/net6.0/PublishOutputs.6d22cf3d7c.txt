@@ -1,5 +1,0 @@
-E:\BroadwayTraining\c-console-sant\bin\Debug\net6.0\publish\c-console-sant.exe
-E:\BroadwayTraining\c-console-sant\bin\Debug\net6.0\publish\c-console-sant.dll
-E:\BroadwayTraining\c-console-sant\bin\Debug\net6.0\publish\c-console-sant.deps.json
-E:\BroadwayTraining\c-console-sant\bin\Debug\net6.0\publish\c-console-sant.runtimeconfig.json
-E:\BroadwayTraining\c-console-sant\bin\Debug\net6.0\publish\c-console-sant.pdb
