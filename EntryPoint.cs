@@ -74,8 +74,11 @@ class Landing
         // string gsum = g.Sum<string>("a","b");
         // Console.WriteLine(gsum);
 
-        Collections coll = new();
-        coll.LearnBuiltInCollections();
+        // Collections coll = new();
+        // coll.LearnBuiltInCollections();
+
+        Linq lq = new();
+        lq.LearnInq();
     }
 
 }
