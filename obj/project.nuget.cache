@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "407G487ZbfHuRiFf15oJyg44v9X21uUjRogi/nc5WYNqKRwpwRwfAS9gA1DpXtoDTvD7lHNKP568wWCmYoz6NQ==",
+  "dgSpecHash": "EVgLpl6udPnhWzMMOF6V1QMWxGI7fjatj57FkH7uNFaNv7obte22neosdw8GzltXIklxUvm/hByx6YB+ab5dYw==",
   "success": true,
-  "projectFilePath": "E:\\BroadwayTraining\\c-console-sant\\c-console-sant.csproj",
+  "projectFilePath": "E:\\dotnet\\c-console-sant\\c-console-sant.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

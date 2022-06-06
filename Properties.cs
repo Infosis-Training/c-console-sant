@@ -1,6 +1,7 @@
 using System;
 class Properties
 {
+    //This is feild
     string _Name;
 
     //Full Property

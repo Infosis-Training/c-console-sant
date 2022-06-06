@@ -8,19 +8,19 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\santb\\.nuget\\packages\\": {}
+    "C:\\Users\\santosh.bohara\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\BroadwayTraining\\c-console-sant\\c-console-sant.csproj",
+      "projectUniqueName": "E:\\dotnet\\c-console-sant\\c-console-sant.csproj",
       "projectName": "c-console-sant",
-      "projectPath": "E:\\BroadwayTraining\\c-console-sant\\c-console-sant.csproj",
-      "packagesPath": "C:\\Users\\santb\\.nuget\\packages\\",
-      "outputPath": "E:\\BroadwayTraining\\c-console-sant\\obj\\",
+      "projectPath": "E:\\dotnet\\c-console-sant\\c-console-sant.csproj",
+      "packagesPath": "C:\\Users\\santosh.bohara\\.nuget\\packages\\",
+      "outputPath": "E:\\dotnet\\c-console-sant\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\santb\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\santosh.bohara\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
