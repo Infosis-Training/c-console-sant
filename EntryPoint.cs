@@ -77,8 +77,11 @@ class Landing
         // Collections coll = new();
         // coll.LearnBuiltInCollections();
 
-        Linq lq = new();
-        lq.LearnInq();
+        // Linq lq = new();
+        // lq.LearnInq();
+
+        DayFour df = new();
+        df.ListFilter();
     }
 
 }
