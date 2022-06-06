@@ -1,6 +1,8 @@
-﻿using System;
+﻿using System.Collections.ObjectModel;
+using System;
 using Oop;
 using Basic;
+using Collect;
 // using DayOneAssignments;
 // using DayTwoAssignments;
 //Oop namespace has been defined in ClassAndMembers.cs and Inheritance.cs
@@ -68,9 +70,12 @@ class Landing
         // string s = prop.Name; //Get
         // Console.WriteLine(s);
 
-        Generic g = new();
-        string gsum = g.Sum<string>("a","b");
-        Console.WriteLine(gsum);
+        // Generic g = new();
+        // string gsum = g.Sum<string>("a","b");
+        // Console.WriteLine(gsum);
+
+        Collections coll = new();
+        coll.LearnBuiltInCollections();
     }
 
 }
