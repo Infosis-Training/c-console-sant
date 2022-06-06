@@ -63,10 +63,14 @@ class Landing
         // double result = e.Compute(1,2,-2);
         // Console.WriteLine(result);
 
-        Properties prop = new();
-        prop.Name =  "Sant"; //Set
-        string s = prop.Name; //Get
-        Console.WriteLine(s);
+        // Properties prop = new();
+        // prop.Name =  "Sant"; //Set
+        // string s = prop.Name; //Get
+        // Console.WriteLine(s);
+
+        Generic g = new();
+        string gsum = g.Sum<string>("a","b");
+        Console.WriteLine(gsum);
     }
 
 }
