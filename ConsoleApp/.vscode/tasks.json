@@ -7,7 +7,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/WebDev/HelloWeb/HelloWeb.csproj",
+                "${workspaceFolder}/c-console-sant.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -19,7 +19,7 @@
             "type": "process",
             "args": [
                 "publish",
-                "${workspaceFolder}/WebDev/HelloWeb/HelloWeb.csproj",
+                "${workspaceFolder}/c-console-sant.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -33,7 +33,7 @@
                 "watch",
                 "run",
                 "--project",
-                "${workspaceFolder}/WebDev/HelloWeb/HelloWeb.csproj"
+                "${workspaceFolder}/c-console-sant.csproj"
             ],
             "problemMatcher": "$msCompile"
         }
