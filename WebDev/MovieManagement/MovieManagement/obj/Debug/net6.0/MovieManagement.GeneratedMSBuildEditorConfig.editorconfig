@@ -15,12 +15,12 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = E:\dotnet\c-console-sant\WebDev\MovieManagement\MovieManagement
 build_property._RazorSourceGeneratorDebug = 
 
-[E:/dotnet/c-console-sant/WebDev/MovieManagement/MovieManagement/Views/Home/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+[E:/dotnet/c-console-sant/WebDev/MovieManagement/MovieManagement/Views/Contact/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/dotnet/c-console-sant/WebDev/MovieManagement/MovieManagement/Views/Home/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+[E:/dotnet/c-console-sant/WebDev/MovieManagement/MovieManagement/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [E:/dotnet/c-console-sant/WebDev/MovieManagement/MovieManagement/Views/Movie/Index.cshtml]

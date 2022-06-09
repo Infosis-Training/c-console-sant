@@ -1,6 +1,47 @@
-﻿@page
-@model MovieManagement.Views.Movie.IndexModel
+﻿@model List<Movie>
+
 @{
+    ViewData["Title"] = "Movie";
 }
 
-<h4>Movie Index</h4>
+<div class="mb-3">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a> </li>
+            <li class="breadcrumb-item active">@ViewData["Title"]</li>
+        </ol>
+    </nav>
+</div>
+
+<div class="table-responsive">
+    <table class="table table-bordered table-hover shadow-sm table-sm">
+        <thead class="bg-light">
+            <tr>
+                <th>SN</th>
+                <th>Movie Name</th>
+                <th>Genre</th>
+                <th>Desc</th>
+                <th>Code</th>
+                <th>Release Date</th>
+                <th>Movie Length</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                int i = 1;
+            }
+            @foreach(var movie in Model)
+            {
+            <tr>
+                <td>@(i++)</td>
+                <td>@movie.Name</td>
+                <td>@movie.Genre</td>
+                <td>@movie.Desc</td>
+                <td>@movie.Code</td>
+                <td>@movie.ReleaseDate</td>
+                <td>@movie.Length (Minuate)</td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
