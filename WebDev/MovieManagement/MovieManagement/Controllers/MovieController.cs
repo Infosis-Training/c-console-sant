@@ -14,20 +14,33 @@ namespace MovieManagement.Controllers
                 Genre = "Comedy",
                 Desc = "3 Idiots is a 2009 Indian Hindi-language coming-of-age comedy-drama film written, edited and directed by Rajkumar Hirani.",
                 Length = 220,
-                ReleaseDate = DateTime.Parse("2015-01-01")
+                imgUrl = "3-idiots.jpeg",
+                ReleaseDate = DateOnly.Parse("08/19/2014").ToString("dd-MM-yyyy")
             };
 
             Movie movie2 = new()
             {
-                Name = "KGF",
+                Name = "KGF 2",
                 Code = "A1235",
                 Genre = "Action",
-                Desc = "South Movied",
-                Length = 220,
-                ReleaseDate = DateTime.Parse("2020-01-01")
+                Desc = "The blood-soaked land of Kolar Gold Fields has a new overlord now, Rocky, whose name strikes fear in the heart of his foes. His allies look up to him as their Savior, the government sees him as a threat, and his enemies are clamouring for revenge.",
+                Length = 320,
+                imgUrl = "kgf-2.jpg",
+                ReleaseDate = DateOnly.Parse("01/02/2022").ToString("dd-MM-yyy")
             };
 
-            List<Movie> movies = new() { movie1, movie2 };
+            Movie movie3 = new()
+            {
+                Name = "Pushpa: The Rise",
+                Code = "A1236",
+                Genre = "Action, Drama",
+                Desc = "A labourer named Pushpa makes enemies as he rises in the world of red sandalwood smuggling. However, violence erupts when the police attempt to bring down his illegal business.",
+                Length = 300,
+                imgUrl = "pushpa.jpg",
+                ReleaseDate = DateOnly.Parse("08/19/2021").ToString("dd-MM-yyyy")
+            };
+
+            List<Movie> movies = new() { movie1, movie2, movie3 };
 
             return View(movies);
         }
