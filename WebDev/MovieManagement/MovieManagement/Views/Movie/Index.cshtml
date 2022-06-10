@@ -4,15 +4,19 @@
     ViewData["Title"] = "Movie";
 }
 
-<ol class="breadcrumb">
-    <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a> </li>
-    <li class="breadcrumb-item active">@ViewData["Title"]</li>
-</ol>
+<div class="d-flex justify-content-between mb-2">
+    <div>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a> </li>
+            <li class="breadcrumb-item active">@ViewData["Title"]</li>
+        </ol>
+    </div>
+    <div>
+        <a asp-controller="Movie" asp-action="Add" class="btn btn-primary"><i class="fa fa-plus"></i> Add Movie</a>
+    </div>
+</div>
 
 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-    @{
-        int i = 1;
-    }
     @foreach (var movie in Model)
     {
 

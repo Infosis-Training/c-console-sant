@@ -15,7 +15,7 @@ namespace MovieManagement.Controllers
                 Desc = "3 Idiots is a 2009 Indian Hindi-language coming-of-age comedy-drama film written, edited and directed by Rajkumar Hirani.",
                 Length = 220,
                 imgUrl = "3-idiots.jpeg",
-                ReleaseDate = DateOnly.Parse("08/19/2014").ToString("dd-MM-yyyy")
+                ReleaseDate = DateOnly.Parse("08/19/2014")
             };
 
             Movie movie2 = new()
@@ -26,7 +26,7 @@ namespace MovieManagement.Controllers
                 Desc = "The blood-soaked land of Kolar Gold Fields has a new overlord now, Rocky, whose name strikes fear in the heart of his foes. His allies look up to him as their Savior, the government sees him as a threat, and his enemies are clamouring for revenge.",
                 Length = 320,
                 imgUrl = "kgf-2.jpg",
-                ReleaseDate = DateOnly.Parse("01/02/2022").ToString("dd-MM-yyy")
+                ReleaseDate = DateOnly.Parse("01/02/2022")
             };
 
             Movie movie3 = new()
@@ -37,12 +37,17 @@ namespace MovieManagement.Controllers
                 Desc = "A labourer named Pushpa makes enemies as he rises in the world of red sandalwood smuggling. However, violence erupts when the police attempt to bring down his illegal business.",
                 Length = 300,
                 imgUrl = "pushpa.jpg",
-                ReleaseDate = DateOnly.Parse("08/19/2021").ToString("dd-MM-yyyy")
+                ReleaseDate = DateOnly.Parse("08/19/2021")
             };
 
             List<Movie> movies = new() { movie1, movie2, movie3 };
 
             return View(movies);
+        }
+    
+        public IActionResult Add()
+        {
+            return View();
         }
     }
 }
