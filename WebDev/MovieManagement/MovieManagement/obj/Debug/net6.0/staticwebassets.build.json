@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "69tkqVahZJ0V1otaho5JoGdgOpGYbFUpVBWYulmCStE=",
+  "Hash": "KjcPFKqmanDkVplvngM2rV4f9Ut9KR5Edw7nzXK8CKw=",
   "Source": "MovieManagement",
   "BasePath": "_content/MovieManagement",
   "Mode": "Default",
@@ -85,6 +85,23 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
+      "Identity": "E:\\dotnet\\c-console-sant\\WebDev\\MovieManagement\\MovieManagement\\wwwroot\\favicon-bak.ico",
+      "SourceId": "MovieManagement",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\dotnet\\c-console-sant\\WebDev\\MovieManagement\\MovieManagement\\wwwroot\\",
+      "BasePath": "_content/MovieManagement",
+      "RelativePath": "favicon-bak.ico",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\favicon-bak.ico"
+    },
+    {
       "Identity": "E:\\dotnet\\c-console-sant\\WebDev\\MovieManagement\\MovieManagement\\wwwroot\\img\\3-idiots.jpeg",
       "SourceId": "MovieManagement",
       "SourceType": "Discovered",
@@ -102,12 +119,12 @@
       "OriginalItemSpec": "wwwroot\\img\\3-idiots.jpeg"
     },
     {
-      "Identity": "E:\\dotnet\\c-console-sant\\WebDev\\MovieManagement\\MovieManagement\\wwwroot\\img\\default.jpg",
+      "Identity": "E:\\dotnet\\c-console-sant\\WebDev\\MovieManagement\\MovieManagement\\wwwroot\\img\\default.JPG",
       "SourceId": "MovieManagement",
       "SourceType": "Discovered",
       "ContentRoot": "E:\\dotnet\\c-console-sant\\WebDev\\MovieManagement\\MovieManagement\\wwwroot\\",
       "BasePath": "_content/MovieManagement",
-      "RelativePath": "img/default.jpg",
+      "RelativePath": "img/default.JPG",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -116,7 +133,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\default.jpg"
+      "OriginalItemSpec": "wwwroot\\img\\default.JPG"
     },
     {
       "Identity": "E:\\dotnet\\c-console-sant\\WebDev\\MovieManagement\\MovieManagement\\wwwroot\\img\\kgf-2.jpg",
