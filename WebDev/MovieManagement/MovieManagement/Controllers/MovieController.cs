@@ -46,11 +46,11 @@ namespace MovieManagement.Controllers
 
         public IActionResult Add()
         {
-            return View();
+            return View();  
         }
 
         [HttpPost]
-        public IActionResult Save(Movie input)
+        public IActionResult Add(Movie input)
         {
             if (!ModelState.IsValid)
             {
@@ -71,6 +71,7 @@ namespace MovieManagement.Controllers
 
                 movies.Add(movie);
 
+                //return RedirectToAction("Index");
                 return View("Index", movies);
             }
         }
