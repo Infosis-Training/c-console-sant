@@ -2,6 +2,12 @@
     ViewData["Title"] = "Home";
 }
 
-<div class="">
-    <h1 class="display-4">Welcome</h1>
+<div class="d-flex justify-content-between mb-2">
+    <div>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item" active><a asp-controller="Home" asp-action="Index">@ViewData["Title"]</a> </li>
+        </ol>
+    </div>
+    <div>
+    </div>
 </div>
