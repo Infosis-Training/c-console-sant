@@ -17,6 +17,6 @@
 
  2. install migration tool from terminal : 'dotnet tool install -g dotnet-ef'
  3. Create DB Context class and create a property for 'Table' as per model. Only one DBContext class will be made for whole project.
- 4. Add DB Context entry & connection string in startup.cs
+ 4. Add DB Context entry & connection string in Program.cs
  5. add db migration from cmd "dotnet ef database update"
  6. lastly run cmd line update database script "dotnet ef database update"

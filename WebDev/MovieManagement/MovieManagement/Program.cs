@@ -12,8 +12,11 @@ builder.Services.AddControllersWithViews();
 //DBContext connect to Database
 //connect Sql Database here, add multiple if needs to connect multiple db.
 builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(
-    //builder.Configuration.GetConnectionString("Server=localhost;Database=master;Trusted_Connection=True;")
+
+    //@"Server=(localdb)\mssqllocaldb;Database=MovieManagement;Trusted_Connection=True;"
+    
     builder.Configuration.GetConnectionString("DefaultConnection") //config from appsetting.json
+
 ));
 
 

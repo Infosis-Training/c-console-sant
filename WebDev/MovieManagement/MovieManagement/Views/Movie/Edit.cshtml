@@ -1,0 +1,57 @@
+﻿@model MovieManagement.Models.Movie
+@{
+    ViewData["Title"] = "Edit";
+    List<SelectListItem> geners = new();
+    geners.Add(new SelectListItem() { Text = "Choose....", Value = "" });
+    geners.Add(new SelectListItem() { Text = "Comedy", Value = "Comedy" });
+    geners.Add(new SelectListItem() { Text = "Action", Value = "Action" });
+    geners.Add(new SelectListItem() { Text = "Si-fi", Value = "Si-fi" });
+    geners.Add(new SelectListItem() { Text = "Family Drama", Value = "Family Drama" });
+    geners.Add(new SelectListItem() { Text = "Horror", Value = "Horror" });
+}
+<div class="d-flex justify-content-between mb-2">
+    <div>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a> </li>
+            <li class="breadcrumb-item"><a asp-controller="Movie" asp-action="Index">Movie</a></li>
+            <li class="breadcrumb-item active">@ViewData["Title"]</li>
+        </ol>
+    </div>
+</div>
+
+<div class="border bg-white shadow-sm p-4 col-md-8 col-sm-12">
+    <form asp-action="Edit" method="post" class="row g-3 mb-3">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        @*<input asp-for="ImgUrl" type="hidden" />*@
+        <div class="col-md-12">
+            <label asp-for="Name" class="form-label"></label>
+            <input class="form-control" asp-for="Name">
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div class="col-md-4">
+            <label asp-for="Genre" class="form-label"></label>
+            <select class="form-control" asp-for="Genre" asp-items="geners"></select>
+            <span asp-validation-for="Genre" class="text-danger"></span>
+        </div>
+        <div class="col-md-4">
+            <label asp-for="ReleaseDate" class="form-label"></label>
+            <input class="form-control" asp-for="ReleaseDate">
+            <span asp-validation-for="ReleaseDate" class="text-danger"></span>
+        </div>
+        <div class="col-md-4">
+            <label asp-for="Length" class="form-label"></label>
+            <input class="form-control" asp-for="Length">
+            <span asp-validation-for="Length" class="text-danger"></span>
+        </div>
+        <div class="col-md-12">
+            <label asp-for="Desc" class="form-label"></label>
+            <textarea class="form-control" asp-for="Desc" rows="8"></textarea>
+            <span asp-validation-for="Desc" class="text-danger"></span>
+        </div>
+        <div class="col-12">
+            <button class="btn btn-success" type="submit" name="submit" value="Update"><i class="fa fa-save"></i> Update</button>
+            <button class="btn btn-outline-danger" type="submit" name="submit" value="Delete" onclick="return confirm('Are you sure to Delete?');">Delete</button>
+        </div>
+    </form>
+    <a asp-action="Index" class="link-primary">Back</a>
+</div>
