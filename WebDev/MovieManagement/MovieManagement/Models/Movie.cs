@@ -7,6 +7,8 @@ namespace MovieManagement.Models
     {
         [Key]
         public int Id { get; set; }
+
+        [MinLength(3,ErrorMessage ="Name must be atleast 3 Char.")]
         public string Name { get; set; } = "";
 
         [DisplayName("Movie Brief Details")]
@@ -21,8 +23,7 @@ namespace MovieManagement.Models
         public DateTime ReleaseDate { get; set; }
 
         [DisplayName("Movie Length (in Minute)")]
-        [Range(0, int.MaxValue)]
-        public int Length { get; set; } = int.MinValue;
+        public int Length { get; set; }
 
         [Display(Name = "Upload Banner")]
         public string? ImgUrl { get; set; } = "Default.JPG";

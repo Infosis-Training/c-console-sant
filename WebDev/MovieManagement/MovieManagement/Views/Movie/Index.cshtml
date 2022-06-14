@@ -1,19 +1,12 @@
 ﻿@model List<Movie>
 
-@{
-    ViewData["Title"] = "Movie";
-}
-
 <div class="d-flex justify-content-between mb-2">
     <div>
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a> </li>
-            <li class="breadcrumb-item active">@ViewData["Title"]</li>
+            <li class="breadcrumb-item active">@ViewBag.Title</li>
         </ol>
     </div>
-    @*<div>
-        <a asp-controller="Movie" asp-action="Add" class="btn btn-primary"><i class="fa fa-plus"></i> Add Movie</a>
-    </div>*@
 </div>
 
 <div class="row">

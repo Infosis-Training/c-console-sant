@@ -19,6 +19,11 @@ namespace MovieManagement.Controllers
         public IActionResult Index()
         {
 
+            //We can also pass other data to view directly using view data or view bag
+
+            //ViewBag.Test = new List<String> { "Sant", "Bohara" };
+            ViewBag.Title = "Movie";
+
             //Get list of all movies
             var allRows = _context.Movies.ToList();
 
