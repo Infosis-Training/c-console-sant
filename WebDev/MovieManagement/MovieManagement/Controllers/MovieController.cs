@@ -49,8 +49,7 @@ namespace MovieManagement.Controllers
             //Save if form is validated
             else
             {
-                input.ImgUrl = "default.JPG";
-
+                
                 input.Code = Guid.NewGuid().ToString();
 
                 _context.Movies.Add(input);

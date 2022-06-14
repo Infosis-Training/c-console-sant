@@ -26,6 +26,6 @@ namespace MovieManagement.Models
         public int Length { get; set; }
 
         [Display(Name = "Upload Banner")]
-        public string? ImgUrl { get; set; } = "Default.JPG";
+        public string ImgUrl { get; set; } = "Default.JPG";
     }
 }
