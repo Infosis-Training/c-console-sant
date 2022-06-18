@@ -1,0 +1,15 @@
+E:\dotnet\c-console-sant\WebDev\MovieManagement\ConsoleApp1\bin\Debug\net6.0\ConsoleApp1.exe
+E:\dotnet\c-console-sant\WebDev\MovieManagement\ConsoleApp1\bin\Debug\net6.0\ConsoleApp1.deps.json
+E:\dotnet\c-console-sant\WebDev\MovieManagement\ConsoleApp1\bin\Debug\net6.0\ConsoleApp1.runtimeconfig.json
+E:\dotnet\c-console-sant\WebDev\MovieManagement\ConsoleApp1\bin\Debug\net6.0\ConsoleApp1.dll
+E:\dotnet\c-console-sant\WebDev\MovieManagement\ConsoleApp1\bin\Debug\net6.0\ConsoleApp1.pdb
+E:\dotnet\c-console-sant\WebDev\MovieManagement\ConsoleApp1\obj\Debug\net6.0\ConsoleApp1.csproj.AssemblyReference.cache
+E:\dotnet\c-console-sant\WebDev\MovieManagement\ConsoleApp1\obj\Debug\net6.0\ConsoleApp1.GeneratedMSBuildEditorConfig.editorconfig
+E:\dotnet\c-console-sant\WebDev\MovieManagement\ConsoleApp1\obj\Debug\net6.0\ConsoleApp1.AssemblyInfoInputs.cache
+E:\dotnet\c-console-sant\WebDev\MovieManagement\ConsoleApp1\obj\Debug\net6.0\ConsoleApp1.AssemblyInfo.cs
+E:\dotnet\c-console-sant\WebDev\MovieManagement\ConsoleApp1\obj\Debug\net6.0\ConsoleApp1.csproj.CoreCompileInputs.cache
+E:\dotnet\c-console-sant\WebDev\MovieManagement\ConsoleApp1\obj\Debug\net6.0\ConsoleApp1.dll
+E:\dotnet\c-console-sant\WebDev\MovieManagement\ConsoleApp1\obj\Debug\net6.0\refint\ConsoleApp1.dll
+E:\dotnet\c-console-sant\WebDev\MovieManagement\ConsoleApp1\obj\Debug\net6.0\ConsoleApp1.pdb
+E:\dotnet\c-console-sant\WebDev\MovieManagement\ConsoleApp1\obj\Debug\net6.0\ConsoleApp1.genruntimeconfig.cache
+E:\dotnet\c-console-sant\WebDev\MovieManagement\ConsoleApp1\obj\Debug\net6.0\ref\ConsoleApp1.dll

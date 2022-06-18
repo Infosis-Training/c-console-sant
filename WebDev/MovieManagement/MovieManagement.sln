@@ -5,6 +5,10 @@ VisualStudioVersion = 17.2.32526.322
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieManagement", "MovieManagement\MovieManagement.csproj", "{41C10D73-1FE3-417C-898E-A7A3208D2034}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{0D4DA9FD-5EE5-4A6B-B37F-6DB9A5E8CDD8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageProcesser", "ImageProcesser\ImageProcesser.csproj", "{E1FC6779-7256-4A3E-9653-031DF959657B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{41C10D73-1FE3-417C-898E-A7A3208D2034}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{41C10D73-1FE3-417C-898E-A7A3208D2034}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{41C10D73-1FE3-417C-898E-A7A3208D2034}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D4DA9FD-5EE5-4A6B-B37F-6DB9A5E8CDD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D4DA9FD-5EE5-4A6B-B37F-6DB9A5E8CDD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D4DA9FD-5EE5-4A6B-B37F-6DB9A5E8CDD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D4DA9FD-5EE5-4A6B-B37F-6DB9A5E8CDD8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1FC6779-7256-4A3E-9653-031DF959657B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1FC6779-7256-4A3E-9653-031DF959657B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1FC6779-7256-4A3E-9653-031DF959657B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1FC6779-7256-4A3E-9653-031DF959657B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

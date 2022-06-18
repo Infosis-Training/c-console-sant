@@ -12,5 +12,8 @@ namespace MovieManagement.Database
 
         //Table name, as per Model created
         public DbSet<Movie> Movies { get; set; }
+
+        //Table name, as per Model created
+        public DbSet<MovieManagement.Models.Crew>? Crew { get; set; }
     }
 }

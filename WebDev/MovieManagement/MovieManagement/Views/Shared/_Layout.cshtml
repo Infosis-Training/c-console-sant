@@ -6,52 +6,90 @@
     <title>@ViewData["Title"]</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/lib/font-awesome/css/all.css" />
-    <link rel="stylesheet" href="~/MovieManagement.styles.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto" />
 
+    <link rel="stylesheet" href="~/lib/font-awesome/css/all.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="~/MovieManagement.styles.css" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom shadow-sm mb-3">
-        <div class="container">
-            <div class="d-flex">
-                <a class="navbar-brand d-flex justify-content-start" asp-area="" asp-controller="Home" asp-action="Index">
-                    <img src="~/img/logo.svg" width="25px" height="25px" /> <span class="mx-2" style="color: #3b0000">Movie Management</span>
-                </a>
-            </div>
-            <div class="d-flex">
+    <!-- ======= Header ======= -->
+    <header id="header" class="header fixed-top d-flex align-items-center">
 
-                <div class="">
-                    <ul class="navbar-nav">
-                        <li class="nav-item dropdown mx-3">
-                            <button class="btn nav-link text-dark dropbtn">Movie</button>
-                                <div class="dropdown-content">
-                                    <a asp-area="" asp-controller="Movie" asp-action="Add">Add Movie</a>
-                                    <a asp-area="" asp-controller="Movie" asp-action="Index">Movie List</a>
-                                </div>
+        <div class="d-flex align-items-center justify-content-between">
+            <a asp-controller="Home" asp-action="Index" class="logo d-flex align-items-center">
+                <img src="~/admin/logo.png" alt="">
+                <span class="d-none d-lg-block">Movie</span>
+            </a>
+            <i class="bi bi-list toggle-sidebar-btn"></i>
+        </div>
+        <!-- End Logo -->
+
+        <nav class="header-nav ms-auto">
+            <ul class="d-flex align-items-center">
+
+                <li class="nav-item dropdown pe-3">
+
+                    <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+                        <img src="~/admin/profile-img.jpg" alt="Profile" class="rounded-circle">
+                        <span class="d-none d-md-block dropdown-toggle ps-2">Mr. Sant</span>
+                    </a>
+                    <!-- End Profile Iamge Icon -->
+
+                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+                        <li class="dropdown-header">
+                            <h6>Sant Bohara</h6>
+                            <span>Supervisor</span>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Contact" asp-action="Index">Contact</a>
+                        <li>
+                            <hr class="dropdown-divider">
                         </li>
+
+                        <li>
+                            <a asp-controller="Home" asp-action="Index" class="dropdown-item d-flex align-items-center">
+                                <i class="bi bi-person"></i>
+                                <span>My Profile</span>
+                            </a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item d-flex align-items-center" href="#">
+                                <i class="bi bi-box-arrow-right"></i>
+                                <span>Sign Out</span>
+                            </a>
+                        </li>
+
                     </ul>
+                    <!-- End Profile Dropdown Items -->
+                </li>
+                <!-- End Profile Nav -->
+            </ul>
+        </nav>
+        <!-- End Icons Navigation -->
+
+    </header>
+    <!-- End Header -->
+
+    <partial name="_Sidebar" />
+
+    <main id="main" class="main">
+
+        <section class="section">
+            <div class="row">
+                <div class="col-lg-12">
+                    @RenderBody()
                 </div>
             </div>
-        </div>
-    </nav>
+        </section>
 
-    <div class="container pt-2">
-
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
-
-    <div class="footer position-static text-muted">
-        <div class="container">
-            &copy; 2022 - All right reserved to Movie Management.
-        </div>
-    </div>
+    </main>
+    <!-- End #main -->
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

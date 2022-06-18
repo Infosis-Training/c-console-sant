@@ -12,15 +12,11 @@
 }
 
 <div class="d-flex justify-content-between mb-2">
-    <div>
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a> </li>
-            <li class="breadcrumb-item"><a asp-controller="Movie" asp-action="Index">Movie</a> </li>
-            <li class="breadcrumb-item active">@ViewData["Title"]</li>
-        </ol>
-    </div>
-    <div>
-    </div>
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a> </li>
+        <li class="breadcrumb-item"><a asp-controller="Movie" asp-action="Index">Movie</a> </li>
+        <li class="breadcrumb-item active">@ViewData["Title"]</li>
+    </ol>
 </div>
 
 <div class="border bg-white shadow-sm p-4 col-md-8 col-sm-12">
@@ -30,22 +26,22 @@
             <input class="form-control" asp-for="Name">
             <span asp-validation-for="Name" class="text-danger"></span>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-12">
             <label asp-for="Genre" class="form-label"></label>
             <select class="form-control" asp-for="Genre" asp-items="geners"></select>
             <span asp-validation-for="Genre" class="text-danger"></span>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-12">
             <label asp-for="ReleaseDate" class="form-label"></label>
             <input class="form-control" asp-for="ReleaseDate" asp-format="{0:yyyy-mm-dd}" >
             <span asp-validation-for="ReleaseDate" class="text-danger"></span>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-12">
             <label asp-for="ImgUrl" class="form-label"></label>
             <input class="form-control" asp-for="ImgUrl" type="file">
             <span asp-validation-for="ImgUrl" class="text-danger"></span>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-12">
             <label asp-for="Length" class="form-label"></label>
             <input class="form-control" asp-for="Length">
             <span asp-validation-for="Length" class="text-danger"></span>

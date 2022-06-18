@@ -1,0 +1,22 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-left">
+
+    <div class="col-md-4">
+        
+        <p class="xy-3">Current Date : @Model.CurrentTime</p>
+
+        <form method="post" enctype="multipart/form-data">
+            <label>Select Images</label>
+            <input asp-for="File" class="form-control" />
+            <button class="btn btn-primary my-3" type="submit">Upload</button>
+        </form>
+
+    </div>
+
+    <img src="~/images/rorate.jpg" style="max-width:200px" />
+</div>

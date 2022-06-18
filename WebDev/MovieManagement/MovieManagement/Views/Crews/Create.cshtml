@@ -1,0 +1,40 @@
+﻿@model MovieManagement.Models.Crew
+@{
+    ViewData["Title"] = "Add Crew";
+}
+<div class="d-flex justify-content-between mb-2">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a> </li>
+        <li class="breadcrumb-item"><a asp-controller="Movie" asp-action="Index">Crew</a> </li>
+        <li class="breadcrumb-item active">@ViewData["Title"]</li>
+    </ol>
+</div>
+<div class="border bg-white shadow-sm p-4 col-md-8 col-sm-12">
+    <form asp-action="Create" class="row g-3">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="col-md-12">
+            <label asp-for="Name" class="control-label"></label>
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div class="col-md-12">
+            <label asp-for="Role" class="control-label"></label>
+            <input asp-for="Role" class="form-control" />
+            <span asp-validation-for="Role" class="text-danger"></span>
+        </div>
+        <div class="col-md-12">
+            <label asp-for="Phone" class="control-label"></label>
+            <input asp-for="Phone" class="form-control" />
+            <span asp-validation-for="Phone" class="text-danger"></span>
+        </div>
+        <div class="col-md-12">
+            <label asp-for="Dob" class="control-label"></label>
+            <input asp-for="Dob" class="form-control" />
+            <span asp-validation-for="Dob" class="text-danger"></span>
+        </div>
+        <div class="col-md-12">
+            <button type="submit" value="Create" class="btn btn-primary"><i class="fa fa-save"></i> Save</button>
+            <a asp-action="Index" class="btn btn-outline-secondary">Back to List</a>
+        </div>
+    </form>
+</div>

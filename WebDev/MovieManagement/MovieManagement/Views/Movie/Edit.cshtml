@@ -23,44 +23,6 @@
 
     <div class="col-md-6">
 
-        <img src="/img/default.JPG" class="border rounded w-100" style="" />
-
-        <!-- Button trigger modal -->
-        <button type="button" class="btn btn-link p-0 my-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
-            Launch demo modal
-        </button>
-    </div>
-
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-
-        <div class="modal-dialog">
-
-            <div class="modal-content">
-
-                <div class="modal-body">
-
-                    <form method="post" enctype="multipart/form-data">
-                        <span>Upload Image</span>
-
-                        <button type="button" class="btn-close float-end" data-bs-dismiss="modal" aria-label="Close"></button>
-
-                        <div class="my-3">
-                            <input class="form-control" type="file" id="formFile" oninput="pic.src=window.URL.createObjectURL(this.files[0])">
-                            <img id="pic" class="w-100 my-2" />
-
-                        </div>
-
-                        <button type="button" class="btn btn-primary">Save</button>
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-md-6">
-
         <form asp-action="Edit" method="post" class="row m-0 g-3 p-3 border bg-white shadow-sm">
 
             <div class="col-md-12">
@@ -100,5 +62,44 @@
 
             <a asp-action="Index" class="link-primary">Back</a>
         </form>
+    </div>
+    
+    <div class="col-md-6">
+
+        <img src="/img/@Model.ImgUrl" class="border rounded w-100" style="" />
+
+        <!-- Button trigger modal -->
+        <a href="#" class="link-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Change Banner
+        </a>
+    </div>
+
+    <!-- Modal -->
+    
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+        <div class="modal-dialog">
+
+            <div class="modal-content">
+
+                <div class="modal-body">
+
+                    <form method="post" enctype="multipart/form-data">
+                        <span>Upload Image</span>
+
+                        <button type="button" class="btn-close float-end" data-bs-dismiss="modal" aria-label="Close"></button>
+
+                        <div class="my-3">
+                            <input class="form-control" type="file" id="formFile" oninput="pic.src=window.URL.createObjectURL(this.files[0])">
+                            <img id="pic" class="w-100 my-2" />
+
+                        </div>
+
+                        <button type="button" class="btn btn-primary">Save</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
