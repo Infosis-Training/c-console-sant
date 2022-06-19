@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MovieManagement.Models
 {
@@ -13,7 +14,7 @@ namespace MovieManagement.Models
 
         [DisplayName("Movie Brief Details")]
         public string Desc { get; set; } = "";
-        public string Code { get; set; } = "";
+        public string? Code { get; set; } = "";
 
         [DisplayName("Choose Genre")]
         public string Genre { get; set; } = "";
@@ -25,7 +26,8 @@ namespace MovieManagement.Models
         [DisplayName("Movie Length (in Minute)")]
         public int Length { get; set; }
 
+        [NotMapped]
         [Display(Name = "Upload Banner")]
-        public string ImgUrl { get; set; } = "default.JPG";
+        public IFormFile? ImgUrl { get; set; }
     }
 }

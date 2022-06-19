@@ -23,6 +23,7 @@
                         <i class="bi bi-circle"></i>
                         <span>Add New</span>
                     </a>
+                </li>
                 <li>
                     <a asp-controller="movie" asp-action="index">
                         <i class="bi bi-circle"></i>
@@ -44,10 +45,27 @@
                         <i class="bi bi-circle"></i>
                         <span>Add New</span>
                     </a>
+                </li>
                 <li>
                     <a asp-controller="Crews" asp-action="index">
                         <i class="bi bi-circle"></i>
                         <span>List All</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        <li class="nav-item">
+            <a href="#" class="nav-link collapsed" data-bs-target="#components-gear" data-bs-toggle="collapse">
+                <i class="bi bi-gear"></i>
+                <span>Setting</span>
+                <i class="bi bi-chevron-down ms-auto"></i>
+            </a>
+            <ul id="components-gear" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+                <li>
+                    <a asp-controller="Genres" asp-action="Index" class="">
+                        <i class="bi bi-circle"></i>
+                        <span>Genre</span>
                     </a>
                 </li>
             </ul>

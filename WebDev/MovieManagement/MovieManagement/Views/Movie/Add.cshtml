@@ -2,13 +2,7 @@
 @{
     ViewData["Title"] = "Add Movie";
 
-    List<SelectListItem> geners = new();
-    geners.Add(new SelectListItem() { Text = "Choose....", Value = ""});
-    geners.Add(new SelectListItem() { Text = "Comedy", Value = "Comedy" });
-    geners.Add(new SelectListItem() { Text = "Action", Value = "Action" });
-    geners.Add(new SelectListItem() { Text = "Si-fi", Value = "Si-fi" });
-    geners.Add(new SelectListItem() { Text = "Family Drama", Value = "Family Drama" });
-    geners.Add(new SelectListItem() { Text = "Horror", Value = "Horror" });
+    var geners = ViewData["generesList"] as List<SelectListItem>;
 }
 
 <div class="d-flex justify-content-between mb-2">

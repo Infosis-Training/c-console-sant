@@ -6,6 +6,11 @@ E:\dotnet\c-console-sant\WebDev\MovieManagement\ImageProcesser\bin\Debug\net6.0\
 E:\dotnet\c-console-sant\WebDev\MovieManagement\ImageProcesser\bin\Debug\net6.0\ImageProcesser.runtimeconfig.json
 E:\dotnet\c-console-sant\WebDev\MovieManagement\ImageProcesser\bin\Debug\net6.0\ImageProcesser.dll
 E:\dotnet\c-console-sant\WebDev\MovieManagement\ImageProcesser\bin\Debug\net6.0\ImageProcesser.pdb
+E:\dotnet\c-console-sant\WebDev\MovieManagement\ImageProcesser\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+E:\dotnet\c-console-sant\WebDev\MovieManagement\ImageProcesser\bin\Debug\net6.0\System.Drawing.Common.dll
+E:\dotnet\c-console-sant\WebDev\MovieManagement\ImageProcesser\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+E:\dotnet\c-console-sant\WebDev\MovieManagement\ImageProcesser\bin\Debug\net6.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+E:\dotnet\c-console-sant\WebDev\MovieManagement\ImageProcesser\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
 E:\dotnet\c-console-sant\WebDev\MovieManagement\ImageProcesser\obj\Debug\net6.0\ImageProcesser.csproj.AssemblyReference.cache
 E:\dotnet\c-console-sant\WebDev\MovieManagement\ImageProcesser\obj\Debug\net6.0\ImageProcesser.GeneratedMSBuildEditorConfig.editorconfig
 E:\dotnet\c-console-sant\WebDev\MovieManagement\ImageProcesser\obj\Debug\net6.0\ImageProcesser.AssemblyInfoInputs.cache
@@ -19,14 +24,9 @@ E:\dotnet\c-console-sant\WebDev\MovieManagement\ImageProcesser\obj\Debug\net6.0\
 E:\dotnet\c-console-sant\WebDev\MovieManagement\ImageProcesser\obj\Debug\net6.0\scopedcss\Pages\Shared\_Layout.cshtml.rz.scp.css
 E:\dotnet\c-console-sant\WebDev\MovieManagement\ImageProcesser\obj\Debug\net6.0\scopedcss\bundle\ImageProcesser.styles.css
 E:\dotnet\c-console-sant\WebDev\MovieManagement\ImageProcesser\obj\Debug\net6.0\scopedcss\projectbundle\ImageProcesser.bundle.scp.css
+E:\dotnet\c-console-sant\WebDev\MovieManagement\ImageProcesser\obj\Debug\net6.0\ImageProcesser.csproj.CopyComplete
 E:\dotnet\c-console-sant\WebDev\MovieManagement\ImageProcesser\obj\Debug\net6.0\ImageProcesser.dll
 E:\dotnet\c-console-sant\WebDev\MovieManagement\ImageProcesser\obj\Debug\net6.0\refint\ImageProcesser.dll
 E:\dotnet\c-console-sant\WebDev\MovieManagement\ImageProcesser\obj\Debug\net6.0\ImageProcesser.pdb
 E:\dotnet\c-console-sant\WebDev\MovieManagement\ImageProcesser\obj\Debug\net6.0\ImageProcesser.genruntimeconfig.cache
 E:\dotnet\c-console-sant\WebDev\MovieManagement\ImageProcesser\obj\Debug\net6.0\ref\ImageProcesser.dll
-E:\dotnet\c-console-sant\WebDev\MovieManagement\ImageProcesser\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
-E:\dotnet\c-console-sant\WebDev\MovieManagement\ImageProcesser\bin\Debug\net6.0\System.Drawing.Common.dll
-E:\dotnet\c-console-sant\WebDev\MovieManagement\ImageProcesser\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
-E:\dotnet\c-console-sant\WebDev\MovieManagement\ImageProcesser\bin\Debug\net6.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
-E:\dotnet\c-console-sant\WebDev\MovieManagement\ImageProcesser\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
-E:\dotnet\c-console-sant\WebDev\MovieManagement\ImageProcesser\obj\Debug\net6.0\ImageProcesser.csproj.CopyComplete
