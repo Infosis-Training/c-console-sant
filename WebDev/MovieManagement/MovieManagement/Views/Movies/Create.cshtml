@@ -1,0 +1,60 @@
+﻿@model MovieManagement.ViewModel.MovieViewModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="d-flex justify-content-between mb-2">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a> </li>
+        <li class="breadcrumb-item"><a asp-controller="Movie" asp-action="Index">Movie</a></li>
+        <li class="breadcrumb-item active">@ViewData["Title"]</li>
+    </ol>
+</div>
+
+<div class="row">
+    <div class="border bg-white shadow-sm p-4 col-md-7 col-sm-12">
+        <p>@Html.ValidationSummary(false)</p>
+        <form asp-action="Create" class="row g-3" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="col-md-8">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="col-md-4">
+                <label asp-for="Banner" class="control-label"></label>
+                <input asp-for="Banner" class="form-control" oninput="pic.src=window.URL.createObjectURL(this.files[0])" />
+                <span asp-validation-for="Banner" class="text-danger"></span>
+            </div>
+            <div class="col-md-4">
+                <label asp-for="Genre" class="control-label"></label>
+                <select class="form-control" asp-for="Genre" asp-items="@Model.Geners"></select>
+                <span asp-validation-for="Genre" class="text-danger"></span>
+            </div>
+            <div class="col-md-4">
+                <label asp-for="ReleaseDate" class="control-label"></label>
+                <input asp-for="ReleaseDate" class="form-control" />
+                <span asp-validation-for="ReleaseDate" class="text-danger"></span>
+            </div>
+            <div class="col-md-4">
+                <label asp-for="Length" class="control-label"></label>
+                <input asp-for="Length" class="form-control" />
+                <span asp-validation-for="Length" class="text-danger"></span>
+            </div>
+            <div class="col-md-12">
+                <label asp-for="Desc" class="control-label"></label>
+                <textarea asp-for="Desc" class="form-control" rows="10"></textarea>
+                <span asp-validation-for="Desc" class="text-danger"></span>
+            </div>
+            <div class="col-md-12">
+                <button type="submit" value="Create" class="btn btn-primary"><i class="fa fa-save"></i> Save</button>
+                <a asp-action="Index" class="btn btn-outline-secondary">Back to List</a>
+            </div>
+        </form>
+    </div>
+
+    <div class="col-md-5 col-sm-12">
+        <img id="pic" class="w-100 my-2" />
+    </div>
+</div>

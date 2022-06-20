@@ -1,9 +1,12 @@
 ﻿using Microsoft.AspNetCore.Http;
+using MovieManagement.Models;
+using System.ComponentModel.DataAnnotations;
 
 namespace MovieManagement.ViewModel
 {
-    public class MovieViewModel
+    public class MovieViewModel : Movie
     {
-        public IFormFile ImgUrl{ get; set; }
+        [Display(Name="Banner Image")]
+        public IFormFile Banner { get; set; }
     }
 }
