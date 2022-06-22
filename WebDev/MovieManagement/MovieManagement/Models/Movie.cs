@@ -1,41 +1,20 @@
-﻿using Microsoft.AspNetCore.Mvc.Rendering;
-using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace MovieManagement.Models
 {
     public class Movie
     {
-        [Key]
         public int Id { get; set; }
-
-        [Required]
-        [MinLength(3,ErrorMessage ="Name must be atleast 3 Char.")]
-        public string Name { get; set; } = "";
-
-        [Required]
-        [DisplayName("Movie Brief Details")]
-        public string Desc { get; set; } = "";
-
-        public string? Code { get; set; } = "";
-
-        [Required]
-        [DisplayName("Choose Genre")]
-        public string Genre { get; set; } = "";
-
-        [NotMapped]
-        public List<SelectListItem> Geners { get; set; }
-        
-        [Required]
-        [DataType(DataType.Date)]
-        [DisplayName("Release Date")]
+        public string Name { get; set; } = string.Empty;
+        public string Description { get; set; } = string.Empty;
+        public string Code { get; set; } = string.Empty;
         public DateTime ReleaseDate { get; set; }
+        public float LengthInMin { get; set; }
+        public byte[]? Banner { get; set; }
 
-        [Required]
-        [DisplayName("Movie Length (in Minute)")]
-        public int Length { get; set; }
+        public Genre? Genre { get; set; }
 
-        public byte[] Banner { get; set; }
+        [Display(Name = "Choose Genre")]
+        public int? GenreId { get; set; }
     }
 }

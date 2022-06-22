@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MovieManagement.Database;
+using MovieManagement.Mapper;
 using MovieManagement.Models;
 using MovieManagement.ViewModel;
 
@@ -13,163 +10,125 @@ namespace MovieManagement.Controllers
 {
     public class MoviesController : Controller
     {
-        private readonly ApplicationDbContext _context;
-        private readonly IWebHostEnvironment webHostEnvironment;
+        private readonly ApplicationDbContext _db;
 
-        public MoviesController(ApplicationDbContext context, IWebHostEnvironment hostEnvironment)
+        public MoviesController(ApplicationDbContext db) // Dependency Injection
         {
-            _context = context;
-            webHostEnvironment = hostEnvironment;
+            _db = db;
         }
 
-        // GET: Movies
         public async Task<IActionResult> Index()
         {
-            return _context.Movies != null ?
-                        View(await _context.Movies.ToListAsync()) :
-                        Problem("Entity set 'ApplicationDbContext.Movies'  is null.");
+            var movies = await _db.Movies.Include(x => x.Genre).ToListAsync();
+
+            var movieViewModels = movies.Select(x => x.ToViewModel()).ToList();
+
+            return View(movieViewModels);
         }
 
-        // GET: Movies/Create
+        [HttpGet]
         public async Task<IActionResult> Create()
         {
-            var genres = await _context.Genre.ToListAsync();
+            MovieViewModel movieViewModel = new();
 
-            var GenresList = genres.Select(x => new SelectListItem { Text = x.Name, Value = x.Id.ToString() }).ToList();
+            movieViewModel.Genres = GetGenreSelectListItems();
 
-            GenresList.Add(new SelectListItem { Text = "Nothing selected...", Value = "", Selected = true });
-
-            MovieViewModel movie = new();
-
-            movie.Geners = GenresList;
-
-            return View(movie);
+            return View(movieViewModel);
         }
 
-        // POST: Movies/Create
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,Desc,Code,Genre,ReleaseDate,Length,Banner")] MovieViewModel movieViewModel)
+        public async Task<IActionResult> Create(MovieViewModel movieViewModel)
         {
-            Movie movie = new()
-            {
-                Name = movieViewModel.Name,
-                Desc = movieViewModel.Desc,
-                Genre = movieViewModel.Genre,
-                Length = movieViewModel.Length,
-                ReleaseDate = movieViewModel.ReleaseDate,
-            };
+            var movie = movieViewModel.ToModel();
 
-            movie.Code = Guid.NewGuid().ToString();
+            await _db.Movies.AddAsync(movie);
+            _db.SaveChanges();
+
+            return RedirectToAction(nameof(Index));
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> EditAsync(int id)
+        {
+
+            var movieToEdit = _db.Movies.Find(id);
+
+            var genres = await _db.Genre.ToListAsync();
+
+            var genresItems = genres.Select(x =>
+                new SelectListItem
+                {
+                    Text = x.Name,
+                    Value = x.Id.ToString()
+                }).ToList();
+
+            genresItems.Add(new SelectListItem { Text = "Choose gender...", Value = "", Selected = true });
+
+            ViewData["GenresItems"] = genresItems;
+
+            return View(movieToEdit);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Edit(int id, [Bind("Name,Description,Genre,LengthInMin,ReleaseDate")] MovieViewModel movieViewModel)
+        {
+            var movieToEdit = await _db.Movies.FindAsync(id);
+
+            movieToEdit.Name = movieViewModel.Name;
+            movieToEdit.Description = movieViewModel.Description;
+            movieToEdit.GenreId = int.Parse(movieViewModel.Genre);
+            movieToEdit.LengthInMin = movieViewModel.LengthInMin;
+            movieToEdit.ReleaseDate = movieViewModel.ReleaseDate;
+
+            _db.Movies.Update(movieToEdit);
+
+            _db.SaveChanges();
+
+            return RedirectToAction(nameof(Index));
+        }
+
+        [HttpPost]
+        public IActionResult Delete(Movie movie)
+        {
+            _db.Movies.Remove(movie);
+            _db.SaveChanges();
+
+            return RedirectToAction(nameof(Index));
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> UploadBanner(int id,[Bind("Banner")] MovieViewModel movieViewModel)
+        {
+            var movieToEdit = await _db.Movies.FindAsync(id);
 
             var stream = new MemoryStream();
 
             movieViewModel.Banner?.CopyTo(stream);
 
-            movie.Banner = stream.ToArray();
+            movieToEdit.Banner = stream.ToArray();
 
-            _context.Movies.Add(movie);
+            _db.Movies.Update(movieToEdit);
 
-            await _context.SaveChangesAsync();
+            _db.SaveChanges();
 
             return RedirectToAction(nameof(Index));
         }
 
-        // GET: Movies/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        private List<SelectListItem> GetGenreSelectListItems()
         {
-            if (id == null || _context.Movies == null)
-            {
-                return NotFound();
-            }
+            var genres = _db.Genre.ToList();
 
-            var movie = await _context.Movies.FindAsync(id);
+            var genresItems = genres.Select(x =>
+                            new SelectListItem
+                            {
+                                Text = x.Name,
+                                Value = x.Id.ToString()
+                            }).ToList();
 
-            if (movie == null)
-            {
-                return NotFound();
-            }
+            genresItems.Add(new SelectListItem { Text = "Choose gender...", Value = "", Selected = true });
 
-            var genres = await _context.Genre.ToListAsync();
-
-            var GenresList = genres.Select(x => new SelectListItem { Text = x.Name, Value = x.Id.ToString() }).ToList();
-
-            GenresList.Add(new SelectListItem { Text = "Nothing selected...", Value = "", Selected = true });
-
-            movie.Geners = GenresList;
-
-            return View(movie);
+            return genresItems;
         }
 
-        // POST: Movies/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Desc,Code,Genre,ReleaseDate,Length,Banner")] MovieViewModel movieViewModel)
-        {
-            if (id != movieViewModel.Id)
-            {
-                return NotFound();
-            }
-
-            var movie = await _context.Movies.FindAsync(id);
-
-            if (movie != null)
-            {
-                movie.Name = movieViewModel.Name;
-                movie.Genre = movieViewModel.Genre;
-                movie.ReleaseDate = movieViewModel.ReleaseDate;
-                movie.Length = movieViewModel.Id;
-                movie.Desc = movieViewModel.Desc;
-
-                var stream = new MemoryStream();
-
-                movieViewModel.Banner?.CopyTo(stream);
-
-                movie.Banner = stream.ToArray();
-
-                await _context.SaveChangesAsync();
-
-                return RedirectToAction(nameof(Index));
-            }
-
-            return View();
-        }
-
-        //POST: Movies/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Delete(int id)
-        {
-            if (_context.Movies == null)
-            {
-                return Problem("Entity set 'ApplicationDbContext.Movies'  is null.");
-            }
-            var movie = await _context.Movies.FindAsync(id);
-            if (movie != null)
-            {
-                _context.Movies.Remove(movie);
-            }
-
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
-        }
-
-
-        //Copy image to server and return image name to other controller to update in database.
-        public string BannerUpload(MovieViewModel input)
-        {
-            string uploadFolder = Path.Combine(webHostEnvironment.WebRootPath, "Banners");
-
-            string fileName = Guid.NewGuid().ToString() + "_" + input.Banner.FileName;
-
-            string filePath = Path.Combine(uploadFolder, fileName);
-
-            using (var fileStream = new FileStream(filePath, FileMode.Create))
-            {
-                input.Banner.CopyTo(fileStream);
-            }
-
-            return fileName;
-        }
     }
 }

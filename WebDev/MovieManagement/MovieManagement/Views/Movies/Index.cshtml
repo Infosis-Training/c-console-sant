@@ -1,4 +1,5 @@
-﻿@model IEnumerable<MovieManagement.Models.Movie>
+﻿@using MovieManagement.ViewModel
+@model List<MovieViewModel>
 
 @{
     ViewData["Title"] = "Index";
@@ -13,23 +14,32 @@
 </div>
 
 <div class="row">
-    @foreach (var movie in Model)
-    {
-        var imageUrl = $"data:image/png;base64,{Convert.ToBase64String(movie.Banner)}";
 
+    @foreach (var movieViewModel in Model)
+    {
         <div class="col-sm-12 col-md-6 col-lg-3 g-3">
+
             <div class="card shadow-sm overflow-hidden">
-                <img src="@imageUrl" width="100%" height="200px" />
+                
+                <img src="@movieViewModel.BannerDataUrl" width="100%" height="200px" />
+
                 <div class="card-body py-3">
-                    <p class="fs-6 fw-bold p-0 m-0">@movie.Name</p>
-                    <small class="p-0 m-0">Genre: @movie.Genre / Duration: @movie.Length Minute</small>
+                
+                    <p class="fs-5 fw-bold p-0 m-0 mw-50">@movieViewModel.Name</p>
+                    
+                    <small class="p-0 m-0">Genre: @movieViewModel.Genre / Duration: @movieViewModel.LengthInMin Minute</small>
+                    
                     <p class="card-text mt-2" style="height:72px; overflow: hidden; text-overflow: ellipsis; text-overflow: ellipsis;">
-                        @movie.Desc
+                        @movieViewModel.Description
                     </p>
+                    
                     <div class="d-flex justify-content-between align-items-center">
-                        <small class="text-muted">Release Date: @movie.ReleaseDate</small>
+
+                        <small class="text-muted">Release Date: @movieViewModel.ReleaseDate</small>
+
                         <div class="btn-group">
-                            <a asp-action="Edit" asp-route-id="@movie.Id" class="btn btn-sm btn-outline-primary">
+
+                            <a asp-action="Edit" asp-route-id="@movieViewModel.Id" class="btn btn-sm btn-outline-primary">
                                 <i class="fa fa-pencil"></i>
                             </a>
                         </div>
