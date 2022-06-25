@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "JIt2ciSN21a3YulwhNCpTEjlCJ0k1ClU5JQeRMJMaWo=",
+  "Hash": "IbAzGUjVVNguPUs4ZZJCTmsmuRVZJ2F/s4hS4hnrYNI=",
   "Source": "MovieManagement",
   "BasePath": "_content/MovieManagement",
   "Mode": "Default",
@@ -270,23 +270,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Banners\\ff6cee50-f96b-44ef-99fa-0968e38bf107_IMAGE_1626507079.jpg"
-    },
-    {
-      "Identity": "E:\\dotnet\\c-console-sant\\WebDev\\MovieManagement\\MovieManagement\\wwwroot\\css\\site - Copy.css",
-      "SourceId": "MovieManagement",
-      "SourceType": "Discovered",
-      "ContentRoot": "E:\\dotnet\\c-console-sant\\WebDev\\MovieManagement\\MovieManagement\\wwwroot\\",
-      "BasePath": "_content/MovieManagement",
-      "RelativePath": "css/site - Copy.css",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\site - Copy.css"
     },
     {
       "Identity": "E:\\dotnet\\c-console-sant\\WebDev\\MovieManagement\\MovieManagement\\wwwroot\\css\\site.css",

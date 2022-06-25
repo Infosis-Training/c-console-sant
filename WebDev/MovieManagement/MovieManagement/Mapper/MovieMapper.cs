@@ -26,11 +26,14 @@ namespace MovieManagement.Mapper
             {
                 Name = movieViewModel.Name,
                 Description = movieViewModel.Description ?? "N/A",
-                GenreId = int.Parse(movieViewModel.Genre),
                 LengthInMin = movieViewModel.LengthInMin,
                 ReleaseDate = movieViewModel.ReleaseDate,
                 Code = Guid.NewGuid().ToString()
             };
+
+            int.TryParse(movieViewModel.Genre, out int GenreId);
+
+            movie.GenreId = GenreId;
 
             var stream = new MemoryStream();
             movieViewModel.Banner?.CopyTo(stream);

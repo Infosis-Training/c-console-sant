@@ -17,13 +17,64 @@ namespace MovieManagement.Controllers
             _db = db;
         }
 
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string sortBy, string search)
         {
-            var movies = await _db.Movies.Include(x => x.Genre).ToListAsync();
+            ViewData["NameSort"] = sortBy == "name" ? "name_desc" : "name";
+            ViewData["GenreSort"] = sortBy == "genre" ? "genre_desc" : "genre";
+            ViewData["LengthSort"] = sortBy == "length" ? "length_desc" : "length";
+            ViewData["DateSort"] = sortBy == "date" ? "date_desc" : "date";
+            ViewData["Search"] = search;
 
-            var movieViewModels = movies.Select(x => x.ToViewModel()).ToList();
+            var movie = (from m in _db.Movies
+                         join g in _db.Genre on m.GenreId equals g.Id
+                           select new Movie { 
+                               Id = m.Id,
+                               Name = m.Name,
+                               Description = m.Description,
+                               ReleaseDate = m.ReleaseDate,
+                               LengthInMin = m.LengthInMin,
+                               GenreName = g.Name,
+                               Banner = m.Banner
+                           });
 
-            return View(movieViewModels);
+            if (!string.IsNullOrEmpty(search))
+            {
+                movie = movie.Where(m => m.Name.Contains(search) || m.Description.Contains(search));
+            }
+
+            switch (sortBy)
+            {
+                case "name":
+                    movie = movie.OrderBy(m => m.Name);
+                    break;
+                case "name_desc":
+                    movie = movie.OrderByDescending(m => m.Name);
+                    break;
+                case "genre":
+                    movie = movie.OrderBy(m => m.GenreName);
+                    break;
+                case "genre_desc":
+                    movie = movie.OrderByDescending(m => m.GenreName);
+                    break;
+                case "length":
+                    movie = movie.OrderBy(m => m.LengthInMin);
+                    break;
+                case "length_desc":
+                    movie = movie.OrderByDescending(m => m.LengthInMin);
+                    break;
+                case "date":
+                    movie = movie.OrderBy(m => m.ReleaseDate);
+                    break;
+                case "date_desc":
+                    movie = movie.OrderByDescending(m => m.ReleaseDate);
+                    break;
+                default:
+                    movie = movie.OrderByDescending(m => m.ReleaseDate);
+                    break;
+            }
+
+            return View(await movie.ToListAsync());
+
         }
 
         [HttpGet]
@@ -37,36 +88,42 @@ namespace MovieManagement.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(MovieViewModel movieViewModel)
+        public async Task<IActionResult> Create([FromForm] MovieViewModel movieViewModel)
         {
             var movie = movieViewModel.ToModel();
 
-            await _db.Movies.AddAsync(movie);
-            _db.SaveChanges();
+            try
+            {
 
-            return RedirectToAction(nameof(Index));
+                if (ModelState.IsValid)
+                {
+                    _db.Add(movie);
+                    await _db.SaveChangesAsync();
+                    return RedirectToAction(nameof(Index));
+                }
+            }
+            catch (DbUpdateException /* ex */)
+            {
+                //Log the error (uncomment ex variable name and write a log.
+                ModelState.AddModelError("", "Unable to save changes. " +
+                    "Try again, and if the problem persists " +
+                    "see your system administrator.");
+            }
+
+            return View(movieViewModel);
         }
 
         [HttpGet]
         public async Task<IActionResult> EditAsync(int id)
         {
 
-            var movieToEdit = _db.Movies.Find(id);
+            var movieToEdit = await _db.Movies.FindAsync(id);
 
-            var genres = await _db.Genre.ToListAsync();
+            var movieViewModel = movieToEdit.ToViewModel();
 
-            var genresItems = genres.Select(x =>
-                new SelectListItem
-                {
-                    Text = x.Name,
-                    Value = x.Id.ToString()
-                }).ToList();
+            movieViewModel.Genres = GetGenreSelectListItems();
 
-            genresItems.Add(new SelectListItem { Text = "Choose gender...", Value = "", Selected = true });
-
-            ViewData["GenresItems"] = genresItems;
-
-            return View(movieToEdit);
+            return View(movieViewModel);
         }
 
         [HttpPost]
@@ -97,7 +154,7 @@ namespace MovieManagement.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> UploadBanner(int id,[Bind("Banner")] MovieViewModel movieViewModel)
+        public async Task<IActionResult> UploadBanner(int id, [Bind("Banner")] MovieViewModel movieViewModel)
         {
             var movieToEdit = await _db.Movies.FindAsync(id);
 

@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MovieManagement.Models
 {
@@ -16,5 +17,8 @@ namespace MovieManagement.Models
 
         [Display(Name = "Choose Genre")]
         public int? GenreId { get; set; }
+
+        [NotMapped]
+        public string GenreName { get; set; }
     }
 }
