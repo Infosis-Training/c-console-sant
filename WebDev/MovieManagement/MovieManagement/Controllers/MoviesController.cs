@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MovieManagement.Database;
+using MovieManagement.Helpers;
 using MovieManagement.Mapper;
 using MovieManagement.Models;
 using MovieManagement.ViewModel;
@@ -17,64 +18,41 @@ namespace MovieManagement.Controllers
             _db = db;
         }
 
-        public async Task<IActionResult> Index(string sortBy, string search)
+        public async Task<IActionResult> Index(string sortBy, string search, int pageNumber = 1, int pageSize = 6)
         {
-            ViewData["NameSort"] = sortBy == "name" ? "name_desc" : "name";
-            ViewData["GenreSort"] = sortBy == "genre" ? "genre_desc" : "genre";
-            ViewData["LengthSort"] = sortBy == "length" ? "length_desc" : "length";
-            ViewData["DateSort"] = sortBy == "date" ? "date_desc" : "date";
-            ViewData["Search"] = search;
+            ViewData["NameSort"]    = sortBy == "name" ? "name_desc" : "name";
+            ViewData["GenreSort"]   = sortBy == "genre" ? "genre_desc" : "genre";
+            ViewData["LengthSort"]  = sortBy == "length" ? "length_desc" : "length";
+            ViewData["DateSort"]    = sortBy == "date" ? "date_desc" : "date";
+            ViewData["Search"]      = search;
 
-            var movie = (from m in _db.Movies
-                         join g in _db.Genre on m.GenreId equals g.Id
-                           select new Movie { 
-                               Id = m.Id,
-                               Name = m.Name,
-                               Description = m.Description,
-                               ReleaseDate = m.ReleaseDate,
-                               LengthInMin = m.LengthInMin,
-                               GenreName = g.Name,
-                               Banner = m.Banner
-                           });
+
+            var movie = _db.Movies.Include(x => x.Genre).AsQueryable();
+
 
             if (!string.IsNullOrEmpty(search))
             {
                 movie = movie.Where(m => m.Name.Contains(search) || m.Description.Contains(search));
             }
 
-            switch (sortBy)
+            movie = sortBy switch
             {
-                case "name":
-                    movie = movie.OrderBy(m => m.Name);
-                    break;
-                case "name_desc":
-                    movie = movie.OrderByDescending(m => m.Name);
-                    break;
-                case "genre":
-                    movie = movie.OrderBy(m => m.GenreName);
-                    break;
-                case "genre_desc":
-                    movie = movie.OrderByDescending(m => m.GenreName);
-                    break;
-                case "length":
-                    movie = movie.OrderBy(m => m.LengthInMin);
-                    break;
-                case "length_desc":
-                    movie = movie.OrderByDescending(m => m.LengthInMin);
-                    break;
-                case "date":
-                    movie = movie.OrderBy(m => m.ReleaseDate);
-                    break;
-                case "date_desc":
-                    movie = movie.OrderByDescending(m => m.ReleaseDate);
-                    break;
-                default:
-                    movie = movie.OrderByDescending(m => m.ReleaseDate);
-                    break;
-            }
+                "name"      => movie = movie.OrderBy(m => m.Name),
+                "name_desc" => movie.OrderByDescending(m => m.Name),
+                "genre"     => movie = movie.OrderBy(m => m.Genre.Name),
+                "genre_desc" => movie = movie.OrderByDescending(m => m.Genre.Name),
+                "length"    => movie = movie.OrderBy(m => m.LengthInMin),
+                "length_desc" => movie = movie.OrderByDescending(m => m.LengthInMin),
+                "date"      => movie.OrderByDescending(m => m.ReleaseDate),
+                "date_desc" => movie.OrderBy(m => m.ReleaseDate),
+                _ => movie.OrderByDescending(m => m.ReleaseDate)
+            };
 
-            return View(await movie.ToListAsync());
+            var moviesFetched = new PaginationList<Movie>(movie, pageNumber, pageSize);
 
+            var list = moviesFetched.ToPaginatedViewModels();
+
+            return View(list);
         }
 
         [HttpGet]

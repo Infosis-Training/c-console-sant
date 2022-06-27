@@ -286,3 +286,10 @@ E:\dotnet\c-console-sant\WebDev\MovieManagement\MovieManagement\obj\Debug\net6.0
 E:\dotnet\c-console-sant\WebDev\MovieManagement\MovieManagement\obj\Debug\net6.0\MovieManagement.pdb
 E:\dotnet\c-console-sant\WebDev\MovieManagement\MovieManagement\obj\Debug\net6.0\MovieManagement.genruntimeconfig.cache
 E:\dotnet\c-console-sant\WebDev\MovieManagement\MovieManagement\obj\Debug\net6.0\ref\MovieManagement.dll
+E:\dotnet\c-console-sant\WebDev\MovieManagement\MovieManagement\bin\Debug\net6.0\System.Web.Mvc.dll
+E:\dotnet\c-console-sant\WebDev\MovieManagement\MovieManagement\bin\Debug\net6.0\System.Web.Razor.dll
+E:\dotnet\c-console-sant\WebDev\MovieManagement\MovieManagement\bin\Debug\net6.0\System.Web.Helpers.dll
+E:\dotnet\c-console-sant\WebDev\MovieManagement\MovieManagement\bin\Debug\net6.0\System.Web.WebPages.Deployment.dll
+E:\dotnet\c-console-sant\WebDev\MovieManagement\MovieManagement\bin\Debug\net6.0\System.Web.WebPages.Razor.dll
+E:\dotnet\c-console-sant\WebDev\MovieManagement\MovieManagement\bin\Debug\net6.0\System.Web.WebPages.dll
+E:\dotnet\c-console-sant\WebDev\MovieManagement\MovieManagement\bin\Debug\net6.0\Microsoft.Web.Infrastructure.dll
