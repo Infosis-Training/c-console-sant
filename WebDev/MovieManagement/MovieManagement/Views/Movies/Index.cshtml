@@ -24,10 +24,10 @@
         <div>
             <ul class="list-inline">
                 <li class="list-inline-item">Sort by:</li>
-                <li class="list-inline-item"><a asp-action="Index" asp-route-sortBy="@ViewData["NameSort"]" asp-route-search="@ViewData["Search"]">Name</a></li>
-                <li class="list-inline-item"><a asp-action="Index" asp-route-sortBy="@ViewData["GenreSort"]" asp-route-search="@ViewData["Search"]">Genre</a></li>
-                <li class="list-inline-item"><a asp-action="Index" asp-route-sortBy="@ViewData["LengthSort"]" asp-route-search="@ViewData["Search"]">Movie Length</a></li>
-                <li class="list-inline-item"><a asp-action="Index" asp-route-sortBy="@ViewData["DateSort"]" asp-route-search="@ViewData["Search"]">Release Date</a></li>
+                <li class="list-inline-item"><a asp-action="Index" asp-route-sortBy="@ViewData["NameSort"]" asp-route-search="@ViewData["Search"]" asp-route-pageNumber="@currentPageNo">Name</a></li>
+                <li class="list-inline-item"><a asp-action="Index" asp-route-sortBy="@ViewData["GenreSort"]" asp-route-search="@ViewData["Search"]" asp-route-pageNumber="@currentPageNo">Genre</a></li>
+                <li class="list-inline-item"><a asp-action="Index" asp-route-sortBy="@ViewData["LengthSort"]" asp-route-search="@ViewData["Search"]" asp-route-pageNumber="@currentPageNo">Movie Length</a></li>
+                <li class="list-inline-item"><a asp-action="Index" asp-route-sortBy="@ViewData["DateSort"]" asp-route-search="@ViewData["Search"]" asp-route-pageNumber="@currentPageNo">Release Date</a></li>
             </ul>
         </div>
 

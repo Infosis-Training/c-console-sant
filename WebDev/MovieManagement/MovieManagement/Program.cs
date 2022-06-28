@@ -1,8 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using MovieManagement.Database;
-using System.Configuration;
-using Microsoft.Extensions.Configuration;
-
+using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,11 +12,23 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(
 
     //@"Server=(localdb)\mssqllocaldb;Database=MovieManagement;Trusted_Connection=True;"
-    
+
     builder.Configuration.GetConnectionString("DefaultConnection") //config from appsetting.json
 
 ));
 
+builder.Services.AddDefaultIdentity<IdentityUser>(
+    options => {
+        options.SignIn.RequireConfirmedAccount = true;
+        options.Password.RequireDigit = false;
+        options.Password.RequireUppercase = false;
+        options.Password.RequireLowercase = false;
+        options.Password.RequireNonAlphanumeric = false;
+
+    })
+.AddEntityFrameworkStores<ApplicationDbContext>();
+
+builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
 
@@ -35,10 +45,13 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+app.MapRazorPages();
 
 app.Run();

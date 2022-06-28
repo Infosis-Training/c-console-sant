@@ -1,0 +1,56 @@
+﻿@page
+@model LoginModel
+
+@{
+    ViewData["Title"] = "Log in";
+}
+
+<main class="form-signin w-100 m-auto">
+
+    <div class="text-center">
+        <img class="mb-4 img-thumbnail border-0 bg-transparent" src="~/admin/logo.png" alt="Logo">
+        <p class="fs-3 fw-bold" style="color:#4154f1">
+            Movie Management
+        </p>
+    </div>
+
+    <div class="border shadow p-4 bg-light rounded">
+
+        <form id="account" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <h1 class="h5 mb-3 fw-normal">Please sign in</h1>
+
+            <div class="form-floating">
+                <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" />
+                <label asp-for="Input.Email" class="form-label"></label>
+                <span asp-validation-for="Input.Email" class="text-danger"></span>
+            </div>
+
+            <div class="form-floating">
+                <input asp-for="Input.Password" class="form-control" autocomplete="current-password" aria-required="true" />
+                <label asp-for="Input.Password" class="form-label"></label>
+                <span asp-validation-for="Input.Password" class="text-danger"></span>
+            </div>
+
+            <div class="checkbox mb-3">
+                <label>
+                    <label asp-for="Input.RememberMe" class="form-label">
+                        <input class="form-check-input" asp-for="Input.RememberMe" />
+                        @Html.DisplayNameFor(m => m.Input.RememberMe)
+                    </label>
+                </label>
+            </div>
+
+            <button id="login-submit" type="submit" class="w-100 btn btn-lg btn-primary">Log in</button>
+
+            <div class="pt-3">
+                <a id="forgot-password" asp-page="./ForgotPassword">Forgot your password?</a>
+                @*<p> <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Register as a new user</a> </p>*@
+            </div>
+        </form>
+    </div>
+</main>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
