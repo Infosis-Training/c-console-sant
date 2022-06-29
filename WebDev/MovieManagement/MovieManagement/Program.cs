@@ -4,18 +4,15 @@ using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
+
+var connectionString = builder.Configuration.GetConnectionString("ApplicationDbContextConnection") ?? throw new InvalidOperationException("Connection string 'ApplicationDbContextConnection' not found.");
+
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseSqlServer(connectionString));;
+
+
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-
-//DBContext connect to Database
-//connect Sql Database here, add multiple if needs to connect multiple db.
-builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(
-
-    //@"Server=(localdb)\mssqllocaldb;Database=MovieManagement;Trusted_Connection=True;"
-
-    builder.Configuration.GetConnectionString("DefaultConnection") //config from appsetting.json
-
-));
 
 builder.Services.AddDefaultIdentity<IdentityUser>(
     options => {
@@ -27,8 +24,6 @@ builder.Services.AddDefaultIdentity<IdentityUser>(
 
     })
 .AddEntityFrameworkStores<ApplicationDbContext>();
-
-builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
 
