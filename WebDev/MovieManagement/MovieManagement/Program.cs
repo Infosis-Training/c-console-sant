@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using MovieManagement.Database;
 using Microsoft.AspNetCore.Identity;
+using MovieManagement.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,7 +15,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddDefaultIdentity<IdentityUser>(
+builder.Services.AddDefaultIdentity<User>(
     options => {
         options.SignIn.RequireConfirmedAccount = true;
         options.Password.RequireDigit = false;
@@ -23,6 +24,7 @@ builder.Services.AddDefaultIdentity<IdentityUser>(
         options.Password.RequireNonAlphanumeric = false;
 
     })
+    .AddRoles<IdentityRole>()
 .AddEntityFrameworkStores<ApplicationDbContext>();
 
 var app = builder.Build();
