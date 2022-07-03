@@ -20,7 +20,7 @@ namespace MovieManagement.Controllers
             _db = db;
         }
 
-        public async Task<IActionResult> Index(string sortBy, string search, int pageNumber = 1, int pageSize = 6)
+        public IActionResult Index(string sortBy, string search, int pageNumber = 1, int pageSize = 6)
         {
             ViewData["NameSort"]    = sortBy == "name" ? "name_desc" : "name";
             ViewData["GenreSort"]   = sortBy == "genre" ? "genre_desc" : "genre";
@@ -58,7 +58,7 @@ namespace MovieManagement.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Create()
+        public IActionResult Create()
         {
             MovieViewModel movieViewModel = new();
 

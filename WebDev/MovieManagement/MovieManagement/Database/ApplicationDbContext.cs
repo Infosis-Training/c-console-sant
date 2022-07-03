@@ -30,5 +30,8 @@ namespace MovieManagement.Database
         //Table name, as per Model created
         public DbSet<MovieManagement.Models.Genre>? Genre { get; set; }
 
+        //Table name, as per Model created
+        public DbSet<MovieManagement.ViewModel.UserViewModel>? UserViewModel { get; set; }
+
     }
 }

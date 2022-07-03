@@ -34,5 +34,41 @@ namespace MovieManagement.Controllers
 
             return View(users);
         }
+
+        public IActionResult Add()
+        {
+            List<IdentityRole> tempEmpList = new List<IdentityRole>();
+            tempEmpList = _context.Roles.ToList();
+            ViewData["tempEmpList"] = tempEmpList;
+
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Store([Bind("UserName", "Password", "FirstName", "LastName", "PhoneNumber", "Role")]UserViewModel user)
+        {
+            if (user == null)
+            {
+                return View();
+            }
+            else
+            {
+                var usr = new User()
+                {
+                    UserName = user.UserName,
+                    FirstName = user.FirstName,
+                    LastName= user.LastName,
+                    PasswordHash = user.Password,
+                    EmailConfirmed = true,
+                    PhoneNumber =  user.PhoneNumber,
+
+                };
+
+                await _userManager.CreateAsync(usr, user.Password);
+                await _userManager.AddToRoleAsync(usr, user.Role);
+
+                return Redirect(nameof(Index));
+            }
+        }
     }
 }
